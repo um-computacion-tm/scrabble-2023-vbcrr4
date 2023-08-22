@@ -1,4 +1,3 @@
-
 DATA= [
     {"letter": "A", "value": 1, "quantity": 12},
     {"letter": "B", "value": 3, "quantity": 2},
@@ -28,6 +27,6 @@ DATA= [
     {"letter": "CH", "value": 5, "quantity": 1},
     {"letter": "LL", "value": 8, "quantity": 1},
     {"letter": "RR", "value": 8, "quantity": 1},
-    {"letter": "_", "value": 0, "quantity": 2}
+    {"letter": "_", "value": 0, "quantity": 2} #comodin
   ]
   
