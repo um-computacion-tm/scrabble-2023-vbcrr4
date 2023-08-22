@@ -1,6 +1,6 @@
 import unittest
 
-from game.tiles import BagTiles,Tile
+from game.tiles import BagTiles,Tile, Comodin
 from piezas import DATA
 from unittest.mock import patch
 
@@ -10,6 +10,11 @@ class TestTiles(unittest.TestCase):
         self.assertEqual(tile.letter, 'Z')
         self.assertEqual(tile.value, 10)
 
+class TestComodin(unittest.TestCase):
+    def test_Comodin_tile(self):
+        Comodin_tile = Comodin()
+        self.assertEqual(Comodin_tile.letter, '_')
+        self.assertEqual(Comodin_tile.value, 0)
 class TestBagTiles(unittest.TestCase):
     @patch('random.shuffle')
     def test_bag_tiles(self, patch_shuffle):
@@ -47,6 +52,7 @@ class TestBagTiles(unittest.TestCase):
             len(bag.tiles),
             100,
         )
+
 
 if __name__ == '__main__':
     unittest.main()
