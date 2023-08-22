@@ -1,6 +1,12 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.0.3) 22-08-23
+### Added
+- "Comodin" class.
+- "Comodin" test.
+## Status
+- Development
 ## (0.0.2) 22-08-23
 ### Added
 - "piezas.py" dictionary for store the tiles.
