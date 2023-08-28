@@ -1,6 +1,14 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.0.5) 28-08-23
+### Added
+- "Board" class on tiles fild.
+- "Board" class on test fild.
+### Changed
+- added "test_put_comodin" to check if after use it the total number of tiles is 100
+## Status
+- Development
 ## (0.0.4) 28-08-23
 ### Added
 - "Cell" class for "tiles.py".
