@@ -47,4 +47,10 @@ class Cell:
             return self.letter.value * self.multiplier
         else:
             return self.letter.value
-        
+class Board:
+    def __init__(self):
+        self.grid = [
+            [ Cell(1, '') for _ in range(15) ]
+            for _ in range(15)
+        ]
+
