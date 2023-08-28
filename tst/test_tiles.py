@@ -111,10 +111,10 @@ class TestBagTiles(unittest.TestCase):
             len(bag.tiles),
             100,
         )
-    def test_put_wildcard(self):
+    def test_put_comodin(self):
         bag = BagTiles()
-        wildcard_tiles = bag.take(2)
-        bag.put(wildcard_tiles)
+        Comodin_tiles = bag.take(2)
+        bag.put(Comodin_tiles)
         self.assertEqual(len(bag.tiles), 100)
 
 
