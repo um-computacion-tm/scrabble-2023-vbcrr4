@@ -1,6 +1,18 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.0.4) 28-08-23
+### Added
+- "Cell" class for "tiles.py".
+- "Cell" class for "test_tiles.py".
+- ".circleci" folder
+- "env" folder
+- added "env" to ".gitignore"
+- added "requirements.txt"
+### Issues
+- added and after removed files for circleci on a incorrect branch (main)
+## Status
+- Development
 ## (0.0.3) 22-08-23
 ### Added
 - "Comodin" class.
