@@ -1,8 +1,21 @@
 import unittest
 
-from game.tiles import BagTiles,Tile, Comodin, Cell
+from game.tiles import BagTiles,Tile, Comodin, Cell, Board
 from piezas import DATA
 from unittest.mock import patch
+
+
+class TestBoard(unittest.TestCase):
+    def test_init(self):
+        board = Board()
+        self.assertEqual(
+            len(board.grid),
+            15,
+        )
+        self.assertEqual(
+            len(board.grid[0]),
+            15,
+        )
 
 class TestCell(unittest.TestCase):
     def test_init(self):
@@ -98,6 +111,11 @@ class TestBagTiles(unittest.TestCase):
             len(bag.tiles),
             100,
         )
+    def test_put_wildcard(self):
+        bag = BagTiles()
+        wildcard_tiles = bag.take(2)
+        bag.put(wildcard_tiles)
+        self.assertEqual(len(bag.tiles), 100)
 
 
 if __name__ == '__main__':
