@@ -1,6 +1,14 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.0.7) 29-08-23
+### Added
+- "ScrabbleGame" class.
+- "ScrabbleGame" test.
+### Changed
+- changed code on ".gitignore"
+## Status
+- Development
 ## (0.0.6) 29-08-23
 ### Added
 - "player" class.
