@@ -1,10 +1,16 @@
 import unittest
 
-from game.tiles import BagTiles,Tile, Comodin, Cell, Board
+from game.tiles import BagTiles,Tile, Comodin, Cell, Board, Player
 from piezas import DATA
 from unittest.mock import patch
 
-
+class TestPlayer(unittest.TestCase):
+    def test_init(self):
+        player_1 = Player()
+        self.assertEqual(
+            len(player_1.tiles),
+            0,
+        )
 class TestBoard(unittest.TestCase):
     def test_init(self):
         board = Board()
