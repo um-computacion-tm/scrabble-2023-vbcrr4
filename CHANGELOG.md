@@ -1,6 +1,12 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.0.6) 29-08-23
+### Added
+- "player" class.
+- "player test.
+## Status
+- Development
 ## (0.0.5) 28-08-23
 ### Added
 - "Board" class on tiles fild.
