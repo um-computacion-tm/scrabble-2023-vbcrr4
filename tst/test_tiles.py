@@ -1,8 +1,18 @@
 import unittest
 
-from game.tiles import BagTiles,Tile, Comodin, Cell, Board, Player
+from game.tiles import BagTiles,Tile, Comodin, Cell, Board, Player, ScrabbleGame
 from piezas import DATA
 from unittest.mock import patch
+
+class TestScrabbleGame(unittest.TestCase):
+    def test_init(self):
+        scrabble_game = ScrabbleGame(players_count=3)
+        self.assertIsNotNone(scrabble_game.board)
+        self.assertEqual(
+            len(scrabble_game.players),
+            3,
+        )
+        self.assertIsNotNone(scrabble_game.bag_tiles)
 
 class TestPlayer(unittest.TestCase):
     def test_init(self):
