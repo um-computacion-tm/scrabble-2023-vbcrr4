@@ -53,4 +53,6 @@ class Board:
             [ Cell(1, '') for _ in range(15) ]
             for _ in range(15)
         ]
-
+class Player:
+    def __init__(self):
+        self.tiles = []
