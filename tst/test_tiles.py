@@ -21,6 +21,12 @@ class TestPlayer(unittest.TestCase):
             len(player_1.tiles),
             0,
         )
+    def test_draw_tiles(self):
+        player = Player()
+        bag = BagTiles()
+        player.draw_tiles(bag,7)
+        self.assertEqual(len(player.tiles),7)
+        self.assertEqual(len(bag.tiles),93)
 class TestBoard(unittest.TestCase):
     def test_init(self):
         board = Board()
