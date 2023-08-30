@@ -1,6 +1,14 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.0.8) 30-08-23
+### Added
+- method "draw_tiles".
+- test for "draw_tiles".
+### Unreleased
+- make heritage on method
+## Status
+- Development
 ## (0.0.7) 29-08-23
 ### Added
 - "ScrabbleGame" class.
