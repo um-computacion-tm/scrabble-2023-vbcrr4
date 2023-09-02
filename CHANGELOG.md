@@ -1,6 +1,14 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.0.9) 01-09-23
+### Added
+- added .codeclimate.yml.
+- added badges to readme.
+### Changed
+- change on "test_tiles.py" to pass cocdeclimate tests.
+## Status
+- Development
 ## (0.0.8) 30-08-23
 ### Added
 - method "draw_tiles".
