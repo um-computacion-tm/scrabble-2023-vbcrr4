@@ -66,13 +66,13 @@ class TestCell(unittest.TestCase):
         self.assertEqual(cell.letter, letter)
 
     def test_cell_value(self):
-        cell = Cell(multiplier=2, multiplier_type='letter')
-        letter = Tile(letter='p', value=3)
+        cell = Cell(multiplier=3, multiplier_type='letter')
+        letter = Tile(letter='q', value=5)
         cell.add_letter(letter=letter)
 
         self.assertEqual(
             cell.calculate_value(),
-            6,
+            15,
         )
 
     def test_cell_multiplier_word(self):
