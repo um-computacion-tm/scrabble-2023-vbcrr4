@@ -1,96 +1,14 @@
 import unittest
 
-from game.tiles import BagTiles,Tile, Comodin, Cell, Board, Player, ScrabbleGame
+from game.tiles import BagTiles,Tile, Comodin
 from piezas import DATA
 from unittest.mock import patch
-
-class TestScrabbleGame(unittest.TestCase):
-    def test_init(self):
-        scrabble_game = ScrabbleGame(players_count=3)
-        self.assertIsNotNone(scrabble_game.board)
-        self.assertEqual(
-            len(scrabble_game.players),
-            3,
-        )
-        self.assertIsNotNone(scrabble_game.bag_tiles)
-
-class TestPlayer(unittest.TestCase):
-    def test_init(self):
-        player_1 = Player()
-        self.assertEqual(
-            len(player_1.tiles),
-            0,
-        )
-    def test_draw_tiles(self):
-        player = Player()
-        bag = BagTiles()
-        player.draw_tiles(bag,7)
-        self.assertEqual(len(player.tiles),7)
-        self.assertEqual(len(bag.tiles),93)
-class TestBoard(unittest.TestCase):
-    def test_init(self):
-        board = Board()
-        self.assertEqual(
-            len(board.grid),
-            15,
-        )
-        self.assertEqual(
-            len(board.grid[0]),
-            15,
-        )
-
-class TestCell(unittest.TestCase):
-    def test_init(self):
-        cell = Cell(multiplier=2, multiplier_type='letter')
-
-        self.assertEqual(
-            cell.multiplier,
-            2,
-        )
-        self.assertEqual(
-            cell.multiplier_type,
-            'letter',
-        )
-        self.assertIsNone(cell.letter)
-        self.assertEqual(
-            cell.calculate_value(),
-            0,
-        )
-
-    def test_add_letter(self):
-        cell = Cell(multiplier=1, multiplier_type='')
-        letter = Tile(letter='p', value=3)
-
-        cell.add_letter(letter=letter)
-
-        self.assertEqual(cell.letter, letter)
-
-    def test_cell_value(self):
-        cell = Cell(multiplier=3, multiplier_type='letter')
-        letter = Tile(letter='q', value=5)
-        cell.add_letter(letter=letter)
-
-        self.assertEqual(
-            cell.calculate_value(),
-            15,
-        )
-
-    def test_cell_multiplier_word(self):
-        cell = Cell(multiplier=2, multiplier_type='word')
-        letter = Tile(letter='p', value=3)
-        cell.add_letter(letter=letter)
-
-        self.assertEqual(
-            cell.calculate_value(),
-            3,
-        )
 
 class TestTiles(unittest.TestCase):
     def test_tile(self):
         tile = Tile('Z', 10)
         self.assertEqual(tile.letter, 'Z')
         self.assertEqual(tile.value, 10)
-
 class TestComodin(unittest.TestCase):
     def test_Comodin_tile(self):
         Comodin_tile = Comodin()

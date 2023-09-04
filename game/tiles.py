@@ -3,13 +3,7 @@ from piezas import DATA
 
 TOTALTILES = 100
 
-class ScrabbleGame:
-    def __init__(self, players_count):
-        self.board = Board()
-        self.bag_tiles = BagTiles()
-        self.players = []
-        for _ in range(players_count):
-            self.players.append(Player())
+
 class Tile:
     def __init__(self, letter, value):
         self.letter = letter
@@ -37,36 +31,5 @@ class BagTiles:
     def put(self, tiles: list):
         if len(tiles) + len(self.tiles) <= TOTALTILES:
             self.tiles.extend(tiles)
-
-class Cell:
-    def __init__(self, multiplier, multiplier_type):
-        self.multiplier = multiplier
-        self.multiplier_type = multiplier_type
-        self.letter = None
-
-    def add_letter(self, letter:Tile):
-        self.letter = letter
-
-    def calculate_value(self):
-        if self.letter is None:
-            return 0
-        if self.multiplier_type == 'letter':
-            return self.letter.value * self.multiplier
-        else:
-            return self.letter.value
-class Board:
-    def __init__(self):
-        self.grid = [
-            [ Cell(1, '') for _ in range(15) ]
-            for _ in range(15)
-        ]
-class Player:
-    def __init__(self):
-        self.tiles = []
-    
-    def draw_tiles(self,bag,count):
-        drawn_tiles = bag.take(count)
-        self.tiles.extend(drawn_tiles)
-
 
 
