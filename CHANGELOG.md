@@ -1,4 +1,9 @@
-# CHANGELOG
+# CHANGELOG 
+## Status
+- Development
+## (0.1.0) 03-09-23
+### Changed
+- Separate classes in different files
 ## Status
 - Development
 ## (0.0.9) 01-09-23
