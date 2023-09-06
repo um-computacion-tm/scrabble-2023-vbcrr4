@@ -12,7 +12,7 @@ class TestBoard(unittest.TestCase):
         self.assertEqual(
             len(board.grid[0]),
             15,
-        )
+        )  
 class TestCell(unittest.TestCase):
     def test_init(self):
         cell = Cell(multiplier=2, multiplier_type='letter')
