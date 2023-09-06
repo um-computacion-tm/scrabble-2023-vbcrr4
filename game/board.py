@@ -22,3 +22,19 @@ class Board:
             [ Cell(1, '') for _ in range(15) ]
             for _ in range(15)
         ]
+    
+    def calculate_word_value(self, word):
+        word_value = 0
+        word_multiplier = 1
+
+        for cell in word:
+            cell_value = cell.calculate_value()
+            word_value += cell_value
+
+            if cell.multiplier_type == 'word':
+                word_multiplier *= cell.multiplier
+                cell.multiplier = 1  # Reinicia el multiplicador de la celda a 1
+
+        word_value *= word_multiplier
+        return word_value
+    
