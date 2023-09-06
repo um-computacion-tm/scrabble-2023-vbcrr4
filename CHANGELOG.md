@@ -1,6 +1,11 @@
 # CHANGELOG 
 ## Status
 - Development
+## (0.1.2) 06-09-23
+### Changed
+- changed importation of the calculate word value method in the test
+## Status
+- Development
 ## (0.1.1) 05-09-23
 ### Added
 - added "calculate_word_value" method on "board.py"
