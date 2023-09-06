@@ -1,6 +1,12 @@
 # CHANGELOG 
 ## Status
 - Development
+## (0.1.1) 05-09-23
+### Added
+- added "calculate_word_value" method on "board.py"
+- added "test_calculate_word_value" 
+## Status
+- Development
 ## (0.1.0) 03-09-23
 ### Changed
 - Separate classes in different files
