@@ -1,6 +1,15 @@
 # CHANGELOG 
 ## Status
 - Development
+## (0.1.3) 07-09-23
+### Added
+- Added "next_turn" method in scrabble_game.py
+- Added test for "next_turn" method in test_crabble_game.py
+### Changed
+- Change in the code of player.py 
+- Change in the test of player.py 
+## Status
+- Development
 ## (0.1.2) 06-09-23
 ### Changed
 - changed importation of the calculate word value method in the test
