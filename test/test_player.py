@@ -9,9 +9,9 @@ class TestPlayer(unittest.TestCase):
             len(player_1.tiles),
             0,
         )
-    def test_draw_tiles(self):
-        player = Player()
-        bag = BagTiles()
+    def test_draw_tiles(self): #verifica que el jugador y la bag tengan el numero correcto de ficha 
+        bag = BagTiles()  
+        player = Player(bag) 
         player.draw_tiles(bag,7)
         self.assertEqual(len(player.tiles),7)
         self.assertEqual(len(bag.tiles),93)
