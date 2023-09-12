@@ -1,5 +1,6 @@
 import unittest
 from game.scrabble_game import *
+from unittest.mock import patch
 
 class TestScrabbleGame(unittest.TestCase):
     def test_init(self):
@@ -36,6 +37,18 @@ class TestScrabbleGame(unittest.TestCase):
         scrabble_game.next_turn()
 
         assert scrabble_game.current_player == scrabble_game.players[0]
+
+class TestEndGame(unittest.TestCase):
+    def test_end_game_when_bag_is_empty(self):
+        scrabble_game = ScrabbleGame(players_count=2)
+        scrabble_game.bag_tiles.tiles = []  # Bolsa de fichas vacía
+
+        # Utiliza unittest.mock.patch para capturar la salida impresa.
+        with patch('builtins.print') as mock_print:
+            scrabble_game.end_game()
+        # Verifica que los mensajes de "¡La bolsa de fichas está vacía!" y "El juego ha terminado." se impriman.
+        mock_print.assert_any_call("¡La bolsa de fichas está vacía!")
+        mock_print.assert_any_call("El juego ha terminado.")
 
 
 if __name__ == '__main__':
