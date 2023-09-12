@@ -20,3 +20,11 @@ class ScrabbleGame:
             if index >= len(self.players):
                 index = 0  #vuelve al primer jugador
             self.current_player = self.players[index]     #establece quien es el jugador actual para poder pasar al siguiente turno.   
+  
+    def end_game(self):
+        if not self.bag_tiles.tiles:
+            print("¡La bolsa de fichas está vacía!")
+            print("El juego ha terminado.")
+            # mostrar las puntuaciones finales y al ganador aquí.
+            # reiniciar el juego automáticamente.
+            # self.reset_game()  # Implementar este método para reiniciar el juego. 
