@@ -1,6 +1,12 @@
 # CHANGELOG 
 ## Status
 - Development
+## (0.1.4) 11-09-23
+### Added
+- Added "end_game" method in "scrabble_game.py"
+- Added test for "end_game" in "test_scrabble_game.py"
+## Status
+- Development
 ## (0.1.3) 07-09-23
 ### Added
 - Added "next_turn" method in scrabble_game.py
