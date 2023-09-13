@@ -13,6 +13,57 @@ class TestBoard(unittest.TestCase):
             len(board.grid[0]),
             15,
         )  
+    def test_init(self):
+        board = Board()
+        self.assertEqual(
+            len(board.grid),
+            15,
+        )
+        self.assertEqual(
+            len(board.grid[0]),
+            15,
+        )
+    
+    def test_word_inside_board(self):
+        board = Board()
+        word = "Facultad"
+        location = (5, 4)
+        orientation = "H"
+        
+        word_is_valid = board.validate_word(word, location, orientation)
+    
+        assert word_is_valid == True
+    
+
+    def test_word_out_of_board(self):
+        board = Board()
+        word = "Facultad"
+        location = (14, 4)
+        orientation = "H"
+
+        word_is_valid = board.validate_word(word, location, orientation)
+
+        assert word_is_valid == False
+
+    def test_word_in_board_V(self):
+        board = Board()
+        word = "Facultad"
+        location = (4, 4)
+        orientation = "V"
+
+        word_is_valid = board.validate_word(word, location, orientation)
+
+        assert word_is_valid == True
+
+    def test_word_out_of_board_V(self):
+        board = Board()
+        word = "Facultad"
+        location = (4, 14)
+        orientation = "V"
+
+        word_is_valid = board.validate_word(word, location, orientation)
+
+        assert word_is_valid == False    
 class TestCell(unittest.TestCase):
     def test_init(self):
         cell = Cell(multiplier=2, multiplier_type='letter')
