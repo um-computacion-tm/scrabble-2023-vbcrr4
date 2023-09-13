@@ -1,6 +1,12 @@
 # CHANGELOG 
 ## Status
 - Development
+## (0.1.5) 13-09-23
+### Added
+- Added "valid_word" methond.
+- Added test for "valid_word".
+## Status
+- Development
 ## (0.1.4) 11-09-23
 ### Added
 - Added "end_game" method in "scrabble_game.py"
