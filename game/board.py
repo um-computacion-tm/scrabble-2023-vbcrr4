@@ -38,3 +38,10 @@ class Board:
         word_value *= word_multiplier
         return word_value
     
+    def validate_word (self, word, location, orientation):
+        len_word = len(word)
+
+        if (orientation == "H" and location[0] + len_word >= 15) or (orientation == "V" and location[1] + len_word >= 15):
+            return False
+        else:
+            return True
