@@ -1,6 +1,12 @@
 # CHANGELOG 
 ## Status
 - Development
+## (0.1.6) 15-09-23
+### Added
+- Added "reset_game" method on "scrabble_game.py"
+- Added "reset" on "player" on "player.py" to reset the player's tiles.
+## Status
+- Development
 ## (0.1.5) 13-09-23
 ### Added
 - Added "valid_word" methond.
