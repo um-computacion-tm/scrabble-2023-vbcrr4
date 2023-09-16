@@ -7,3 +7,7 @@ class Player:
     def draw_tiles(self,bag,count):
         drawn_tiles = bag.take(count)
         self.tiles.extend(drawn_tiles)
+    
+    def reset(self):
+        self.tiles = []  # Restablece las fichas del jugador.
+
