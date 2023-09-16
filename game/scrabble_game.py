@@ -27,4 +27,11 @@ class ScrabbleGame:
             print("El juego ha terminado.")
             # mostrar las puntuaciones finales y al ganador aquí.
             # reiniciar el juego automáticamente.
-            # self.reset_game()  # Implementar este método para reiniciar el juego. 
+            self.reset_game()  # Implementar este método para reiniciar el juego. 
+    def reset_game(self):
+        self.board = Board()
+        self.bag_tiles = BagTiles()
+        for player in self.players:
+            player.reset() 
+        self.current_player = None
+        
