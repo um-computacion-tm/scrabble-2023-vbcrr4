@@ -38,6 +38,16 @@ class TestScrabbleGame(unittest.TestCase):
 
         assert scrabble_game.current_player == scrabble_game.players[0]
 
+class TestScrabbleGame(unittest.TestCase):
+    def test_start_game(self):
+        scrabble_game = ScrabbleGame(players_count=3)
+        scrabble_game.start_game()     
+        for player in scrabble_game.players:     # Verifica que cada jugador tenga exactamente 7 fichas al inicio
+            self.assertEqual(len(player.tiles), 7)
+            
+        total_tiles = sum(len(player.tiles) for player in scrabble_game.players)   # Verifica que la bolsa de fichas tenga la cantidad correcta de fichas restantes
+        self.assertEqual(len(scrabble_game.bag_tiles.tiles), 100 - total_tiles)
+
 class TestEndGame(unittest.TestCase):
     def test_end_game_when_bag_is_empty(self):
         scrabble_game = ScrabbleGame(players_count=2)
