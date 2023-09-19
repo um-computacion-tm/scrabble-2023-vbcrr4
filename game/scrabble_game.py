@@ -12,6 +12,12 @@ class ScrabbleGame:
         
         self.current_player=None
 
+    def start_game(self):
+        for player in self.players:
+            tiles_to_draw = 7 - len(player.tiles)
+            new_tiles = self.bag_tiles.take(tiles_to_draw)
+            player.tiles.extend(new_tiles)
+
     def next_turn(self):
         if self.current_player is None: #verifica si es None significa que es el primer turno de juego
             self.current_player = self.players[0]
