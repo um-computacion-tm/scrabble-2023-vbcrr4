@@ -1,6 +1,11 @@
 # CHANGELOG 
 ## Status
 - Development
+## (0.1.8) 20-09-23
+### Added
+- Added test for reset method on "player.py"
+## Status
+- Development
 ## (0.1.7) 19-09-23
 ### Added
 - Added "start_game" method on "scrabble_game.py"
