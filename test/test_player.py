@@ -16,5 +16,12 @@ class TestPlayer(unittest.TestCase):
         self.assertEqual(len(player.tiles),7)
         self.assertEqual(len(bag.tiles),93)
 
+    def test_reset(self):
+        bag = BagTiles()
+        player = Player(bag)
+        player.draw_tiles(bag, 7) 
+        player.reset()
+        self.assertEqual(len(player.tiles), 0)# Verifica que el jugador tenga 0 fichas después del reset
+
 if __name__ == '__main__':
     unittest.main()
