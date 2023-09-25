@@ -1,6 +1,11 @@
 # CHANGELOG 
 ## Status
 - Development
+## (0.1.9) 24-09-23
+### Added
+- Addded Dockerfile
+## Status
+- Development
 ## (0.1.8) 20-09-23
 ### Added
 - Added test for reset method on "player.py"
