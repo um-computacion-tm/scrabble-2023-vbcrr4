@@ -1,6 +1,7 @@
 import unittest
 from game.board import *
-
+from pyrae import dle 
+from game.tiles import Tile
 
 class TestBoard(unittest.TestCase):
     def test_init(self):
@@ -30,7 +31,7 @@ class TestBoard(unittest.TestCase):
         location = (5, 4)
         orientation = "H"
         
-        word_is_valid = board.validate_word(word, location, orientation)
+        word_is_valid = board.validate_word_rae(word, location, orientation)
     
         assert word_is_valid == True
     
@@ -41,7 +42,7 @@ class TestBoard(unittest.TestCase):
         location = (14, 4)
         orientation = "H"
 
-        word_is_valid = board.validate_word(word, location, orientation)
+        word_is_valid = board.validate_word_rae(word, location, orientation)
 
         assert word_is_valid == False
 
@@ -51,7 +52,7 @@ class TestBoard(unittest.TestCase):
         location = (4, 4)
         orientation = "V"
 
-        word_is_valid = board.validate_word(word, location, orientation)
+        word_is_valid = board.validate_word_rae(word, location, orientation)
 
         assert word_is_valid == True
 
@@ -61,9 +62,26 @@ class TestBoard(unittest.TestCase):
         location = (4, 14)
         orientation = "V"
 
-        word_is_valid = board.validate_word(word, location, orientation)
-
+        word_is_valid = board.validate_word_rae(word, location, orientation)
         assert word_is_valid == False    
+    def test_validate_word_rae_exists(self):
+        board = Board()
+        word = [Cell(Tile('A', 1)), Cell(Tile('R', 1)), Cell(Tile('B', 1))]
+        
+        exists = board.validate_word_rae(word)      # Verificar si la palabra existe en "pyrae"
+
+        # La palabra 'ARB' existe en "pyrae"
+        self.assertTrue(exists)
+
+    def test_validate_word_rae_not_exists(self):
+        board = Board()
+        word = [Cell(Tile('X', 1)), Cell(Tile('Y', 1)), Cell(Tile('Z', 1))]
+        
+        exists = board.validate_word_rae(word)       # Verificar si la palabra existe en "pyrae"
+
+        # La palabra 'XYZ' no existe en "pyrae"
+        self.assertFalse(exists)
+
 class TestCell(unittest.TestCase):
     def test_init(self):
         cell = Cell(multiplier=2, multiplier_type='letter')
