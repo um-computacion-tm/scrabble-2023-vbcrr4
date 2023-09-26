@@ -1,6 +1,13 @@
 # CHANGELOG 
 ## Status
 - Development
+## (0.2.0) 25-09-23
+### Fixed
+- env was reinstalled to correct errors with environment
+### Unreleased
+- Method "valid_word_rae" is not working, have to redo
+## Status
+- Development
 ## (0.1.9) 24-09-23
 ### Added
 - Addded Dockerfile
