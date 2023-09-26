@@ -1,4 +1,3 @@
-from pyrae import dle
 from game.tiles import Tile
 class Cell:
     def __init__(self, letter=None, multiplier=1, multiplier_type=''):
@@ -46,16 +45,3 @@ class Board:
             return False
         else:
             return True
-
-    def validate_word_rae(self, word):
-        word_to_check = ''
-        for cell in word:
-            if cell.letter:
-                word_to_check += cell.letter.letter
-
-        result = dle.search_by_word(word_to_check)
-
-        if result and 'Versión electrónica 23.6' not in result[0].text:
-            return True  # La palabra existe en "pyrae"
-        else:
-            return False  # La palabra no existe en "pyrae"

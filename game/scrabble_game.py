@@ -32,8 +32,7 @@ class ScrabbleGame:
             print("¡La bolsa de fichas está vacía!")
             print("El juego ha terminado.")
             # mostrar las puntuaciones finales y al ganador aquí.
-            # reiniciar el juego automáticamente.
-            self.reset_game()  # Implementar este método para reiniciar el juego. 
+            self.reset_game()
     def reset_game(self):
         self.board = Board()
         self.bag_tiles = BagTiles()
