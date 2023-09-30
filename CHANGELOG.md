@@ -1,9 +1,15 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.2.3) 30-09-23
+### Added
+- Added letter and word multiplier on board.
+- Added test for letter and word multiplier on board.
+## Status
+- Development
 ## (0.2.2) 29-09-23
 ### Changed
-- changed code and test for validate words with pyrae. 
+- Changed code and test for validate words with pyrae. 
 ## Status
 - Development
 ## (0.2.1) 26-09-23
