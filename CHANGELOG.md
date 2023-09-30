@@ -1,4 +1,9 @@
-# CHANGELOG 
+# CHANGELOG
+## Status
+- Development
+## (0.2.2) 29-09-23
+### Changed
+- changed code and test for validate words with pyrae. 
 ## Status
 - Development
 ## (0.2.1) 26-09-23
