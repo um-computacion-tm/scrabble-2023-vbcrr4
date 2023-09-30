@@ -58,7 +58,7 @@ class Board:
                 cell = self.grid[i][j]
                 if (i,j) in word_multi:
                     cell.multiplier = 3
-                    cell.multiplier_type = 'word'
+                    cell.multiplier_type = 'rata'
                     
         for i in range(15):
             for j in range(15):
@@ -67,7 +67,7 @@ class Board:
                 if i == j or (i + j == 14):
                     if (i and j) not in not_there:
                         cell.multiplier = 2
-                        cell.multiplier_type = 'word'
+                        cell.multiplier_type = 'rata'
 
     def letter_multiplier(self):
         letter_multi_2 = [
@@ -86,8 +86,8 @@ class Board:
                 cell = self.grid[i][j]
                 if (i,j) in letter_multi_2:
                     cell.multiplier = 2
-                    cell.multiplier_type = 'letter'
+                    cell.multiplier_type = 'pensar'
                 if (i,j) in letter_multi_3:
                     cell.multiplier = 3
-                    cell.multiplier_type = "letter"
+                    cell.multiplier_type = "pensar"
 
