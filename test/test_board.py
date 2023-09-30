@@ -1,6 +1,6 @@
 import unittest
 from game.board import *
-
+  
 class TestBoard(unittest.TestCase):
     def test_init(self):
         board = Board()
@@ -12,17 +12,39 @@ class TestBoard(unittest.TestCase):
             len(board.grid[0]),
             15,
         )  
-    def test_init(self):
+    def test_positions_word_3_first(self): 
         board = Board()
-        self.assertEqual(
-            len(board.grid),
-            15,
-        )
-        self.assertEqual(
-            len(board.grid[0]),
-            15,
-        )
-    
+        board.positions()
+        self.assertEqual(board.grid[0][0].multiplier, 3)
+        self.assertEqual(board.grid[0][0].multiplier_type, 'rata')
+        self.assertEqual(board.grid[7][0].multiplier, 3)
+        self.assertEqual(board.grid[7][0].multiplier_type, 'rata')
+        self.assertEqual(board.grid[14][14].multiplier, 3)
+        self.assertEqual(board.grid[14][14].multiplier_type, 'rata')
+        self.assertNotEqual(board.grid[0][14], board.grid[5][7])
+
+    def test_positions_word_3_second(self):  
+        board = Board()
+        board.positions()
+        self.assertEqual(board.grid[1][1].multiplier, 2)
+        self.assertEqual(board.grid[2][12].multiplier_type, 'rata')
+        self.assertEqual(board.grid[11][3].multiplier, 2)
+        self.assertEqual(board.grid[1][13].multiplier_type, 'rata')
+        self.assertNotEqual(board.grid[0][14].multiplier, 2)
+        self.assertNotEqual(board.grid[7][7].multiplier, 2)
+        self.assertNotEqual(board.grid[6][7].multiplier, 2)
+
+    def test_positions_letter_2(self):
+        board = Board()
+        board.positions()
+        self.assertEqual(board.grid[0][3].multiplier, 2)
+        self.assertEqual(board.grid[0][3].multiplier_type, 'pensar')
+        self.assertEqual(board.grid[6][6].multiplier, 2)
+        self.assertEqual(board.grid[6][6].multiplier_type, 'pensar')
+        self.assertNotEqual(board.grid[0][14].multiplier, 2)
+        self.assertNotEqual(board.grid[7][7].multiplier, 2)
+        self.assertNotEqual(board.grid[6][1].multiplier, 2)
+
     def test_word_inside_board(self):
         board = Board()
         word = "Facultad"
