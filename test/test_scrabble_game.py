@@ -38,7 +38,6 @@ class TestScrabbleGame(unittest.TestCase):
 
         assert scrabble_game.current_player == scrabble_game.players[0]
 
-class TestScrabbleGame(unittest.TestCase):
     def test_start_game(self):
         scrabble_game = ScrabbleGame(players_count=3)
         scrabble_game.start_game()     
@@ -48,17 +47,28 @@ class TestScrabbleGame(unittest.TestCase):
         total_tiles = sum(len(player.tiles) for player in scrabble_game.players)   # Verifica que la bolsa de fichas tenga la cantidad correcta de fichas restantes
         self.assertEqual(len(scrabble_game.bag_tiles.tiles), 100 - total_tiles)
 
-class TestEndGame(unittest.TestCase):
     def test_end_game_when_bag_is_empty(self):
         scrabble_game = ScrabbleGame(players_count=2)
         scrabble_game.bag_tiles.tiles = []  # Bolsa de fichas vacía
 
-        # Utiliza unittest.mock.patch para capturar la salida impresa.
+        #unittest.mock.patch para capturar la salida impresa.
         with patch('builtins.print') as mock_print:
             scrabble_game.end_game()
         # Verifica que los mensajes de "¡La bolsa de fichas está vacía!" y "El juego ha terminado." se impriman.
         mock_print.assert_any_call("¡La bolsa de fichas está vacía!")
         mock_print.assert_any_call("El juego ha terminado.")
+    def test_reset_game(self):
+        scrabble_game = ScrabbleGame(players_count=3)
+        scrabble_game.reset_game()
+
+        #el juego se haya reiniciado correctamente
+        self.assertIsNotNone(scrabble_game.board)
+        self.assertIsNotNone(scrabble_game.bag_tiles)
+        self.assertIsNone(scrabble_game.current_player)
+
+        for player in scrabble_game.players:
+        #cada jugador tenga una lista de fichas vacía
+            self.assertEqual(len(player.tiles), 0)
 
 
 if __name__ == '__main__':
