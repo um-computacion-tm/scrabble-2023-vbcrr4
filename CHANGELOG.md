@@ -1,6 +1,13 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.2.4) 03-10-23
+### Added 
+- Added test for reset_game in test_scrabble_game.
+### Changed
+- Change in test_scrabble_game.
+## Status
+- Development
 ## (0.2.3) 30-09-23
 ### Added
 - Added letter and word multiplier on board.
