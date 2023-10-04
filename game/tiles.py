@@ -8,6 +8,10 @@ class Tile:
     def __init__(self, letter, value):
         self.letter = letter
         self.value = value
+
+    def __repr__(self) -> str:
+        return self.letter
+#mostrar valor de la tile
 class Comodin:
     def __init__(self):
         self.letter = '_'
