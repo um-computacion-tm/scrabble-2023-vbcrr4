@@ -12,38 +12,38 @@ class TestBoard(unittest.TestCase):
             len(board.grid[0]),
             15,
         )  
-    def test_positions_word_3_first(self): 
-        board = Board()
-        board.positions()
-        self.assertEqual(board.grid[0][0].multiplier, 3)
-        self.assertEqual(board.grid[0][0].multiplier_type, 'word')
-        self.assertEqual(board.grid[7][0].multiplier, 3)
-        self.assertEqual(board.grid[7][0].multiplier_type, 'word')
-        self.assertEqual(board.grid[14][14].multiplier, 3)
-        self.assertEqual(board.grid[14][14].multiplier_type, 'word')
-        self.assertNotEqual(board.grid[0][14], board.grid[5][7])
+    def test_cells_multiplier(self):
+        grid = Board()
+        grid.cells_multiplier()
+        for coordinate in TRIPLE_WORD_SCORE:
+            cell = grid.grid[coordinate[0]][coordinate[1]]
+            self.assertEqual(cell.multiplier_type, "word")
+            self.assertEqual(cell.multiplier, 3)
 
-    def test_positions_word_3_second(self):  
-        board = Board()
-        board.positions()
-        self.assertEqual(board.grid[1][1].multiplier, 2)
-        self.assertEqual(board.grid[2][12].multiplier_type, 'word')
-        self.assertEqual(board.grid[11][3].multiplier, 2)
-        self.assertEqual(board.grid[1][13].multiplier_type, 'word')
-        self.assertNotEqual(board.grid[0][14].multiplier, 2)
-        self.assertNotEqual(board.grid[7][7].multiplier, 2)
-        self.assertNotEqual(board.grid[6][7].multiplier, 2)
+        for coordinate in DOUBLE_WORD_SCORE:
+            cell = grid.grid[coordinate[0]][coordinate[1]]
+            self.assertEqual(cell.multiplier_type, "word")
+            self.assertEqual(cell.multiplier, 2)
 
-    def test_positions_letter_2(self):
-        board = Board()
-        board.positions()
-        self.assertEqual(board.grid[0][3].multiplier, 2)
-        self.assertEqual(board.grid[0][3].multiplier_type, 'letter')
-        self.assertEqual(board.grid[6][6].multiplier, 2)
-        self.assertEqual(board.grid[6][6].multiplier_type, 'letter')
-        self.assertNotEqual(board.grid[0][14].multiplier, 2)
-        self.assertNotEqual(board.grid[7][7].multiplier, 2)
-        self.assertNotEqual(board.grid[6][1].multiplier, 2)
+        for coordinate in TRIPLE_LETTER_SCORE:
+            cell = grid.grid[coordinate[0]][coordinate[1]]
+            self.assertEqual(cell.multiplier_type, "letter")
+            self.assertEqual(cell.multiplier, 3)
+
+        for coordinate in DOUBLE_LETTER_SCORE:
+            cell = grid.grid[coordinate[0]][coordinate[1]]
+            self.assertEqual(cell.multiplier_type, "letter")
+            self.assertEqual(cell.multiplier, 2)
+
+    def test_cell_multiplier(self):
+        grid = Board()
+        coordinate = (0, 1)
+        multiplier_type = "word"
+        multiplier_value = 3
+        grid.cell_multiplier(coordinate, multiplier_type, multiplier_value)
+        cell = grid.grid[coordinate[0]][coordinate[1]]
+        self.assertEqual(cell.multiplier_type, multiplier_type)
+        self.assertEqual(cell.multiplier, multiplier_value)
 
     def test_word_inside_board(self):
         board = Board()
