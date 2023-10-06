@@ -1,4 +1,10 @@
 from game.tiles import Tile
+TRIPLE_WORD_SCORE = ((0,0), (7, 0), (14,0), (0, 7), (14, 7), (0, 14), (7, 14), (14,14))
+DOUBLE_WORD_SCORE = ((1,1), (2,2), (3,3), (4,4), (1, 13), (2, 12), (3, 11), (4, 10), (13, 1), (12, 2),
+                    (11, 3), (10, 4), (13,13), (12, 12), (11,11), (10,10))
+TRIPLE_LETTER_SCORE = ((1,5), (1, 9), (5,1), (5,5), (5,9), (5,13), (9,1), (9,5), (9,9), (9,13), (13, 5), (13,9))
+DOUBLE_LETTER_SCORE = ((0, 3), (0,11), (2,6), (2,8), (3,0), (3,7), (3,14), (6,2), (6,6), (6,8), (6,12), (7,3), (7,11),
+                        (8,2), (8,6), (8,8), (8, 12), (11,0), (11,7), (11,14), (12,6), (12,8), (14, 3), (14, 11))
 class Cell:
     def __init__(self, letter=None, multiplier=1, multiplier_type=''):
         self.multiplier = multiplier
@@ -22,6 +28,20 @@ class Board:
             [ Cell(1, '') for _ in range(15) ]
             for _ in range(15)
         ]
+    def cells_multiplier(self):
+        for coordinate in TRIPLE_WORD_SCORE:
+            self.cell_multiplier(coordinate, "word", 3)
+        for coordinate in DOUBLE_WORD_SCORE:
+            self.cell_multiplier(coordinate, "word", 2)
+        for coordinate in TRIPLE_LETTER_SCORE:
+            self.cell_multiplier(coordinate, "letter", 3)
+        for coordinate in DOUBLE_LETTER_SCORE:
+            self.cell_multiplier(coordinate, "letter", 2)
+
+    def cell_multiplier(self,coordinate, multiplier_type, multiplier_value):
+        cell = self.grid[coordinate[0]][coordinate[1]]
+        cell.multiplier_type = multiplier_type
+        cell.multiplier = multiplier_value    
 
     def calculate_word_value(self, word):
         word_value = 0
@@ -44,50 +64,4 @@ class Board:
             return False
         else:
             return True
-
-    def positions(self):
-        self.letter_multiplier()
-        self.word_multiplier()
-
-    def word_multiplier(self):
-        word_multi = [
-            (0,0), (7,0), (14,0), (0,7), (0,14), (7,14), (14,14)
-        ]
-        for i in range(15):
-            for j in range(15):
-                cell = self.grid[i][j]
-                if (i,j) in word_multi:
-                    cell.multiplier = 3
-                    cell.multiplier_type = 'word'
-                    
-        for i in range(15):
-            for j in range(15):
-                not_there = [0, 5, 6, 7, 8, 9, 14]
-                cell = self.grid[i][j]
-                if i == j or (i + j == 14):
-                    if (i and j) not in not_there:
-                        cell.multiplier = 2
-                        cell.multiplier_type = 'word'
-
-    def letter_multiplier(self):
-        letter_multi_2 = [
-            (3,0), (11,0), (6,2), (8,2), (0,3), (14,3), (7,3),
-            (2,6), (6,6), (8,6), (12,6), (3,7), (11,7), (2,8),
-            (6,8), (8,8), (12,8), (14,11), (0,11), (7,11), (6,12),
-            (8,12), (11,14), (3,14), 
-        ]
-
-        letter_multi_3 = [
-            (1,5), (1,9), (5,1), (5,5), (5,9), (5,13), (9,1),
-            (9,5), (9,9), (9,13), (13,5), (13,9),
-        ]
-        for i in range(15):
-            for j in range(15):
-                cell = self.grid[i][j]
-                if (i,j) in letter_multi_2:
-                    cell.multiplier = 2
-                    cell.multiplier_type = 'letter'
-                if (i,j) in letter_multi_3:
-                    cell.multiplier = 3
-                    cell.multiplier_type = "letter"
 

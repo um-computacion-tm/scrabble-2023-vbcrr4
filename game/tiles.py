@@ -10,8 +10,8 @@ class Tile:
         self.value = value
 
     def __repr__(self) -> str:
-        return self.letter
-#mostrar valor de la tile
+        return str("[" + self.letter + "](" + str(self.value) + "p.)")
+
 class Comodin:
     def __init__(self):
         self.letter = '_'
