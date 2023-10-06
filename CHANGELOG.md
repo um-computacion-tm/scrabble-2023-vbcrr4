@@ -1,6 +1,13 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.2.6) 06-10-23
+### Change
+- Added letter and points in repr (tiles.py).
+- Changed method to multiplier words an letters (board.py).
+- Changed test for multiplier words an letters method (test_board.py).
+## Status
+- Development
 ## (0.2.5) 05-10-23
 ### Added 
 - Added "display_hand" and "play_tile" to "player.py".
