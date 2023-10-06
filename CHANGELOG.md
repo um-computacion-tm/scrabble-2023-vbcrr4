@@ -1,6 +1,12 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.2.5) 05-10-23
+### Added 
+- Added "display_hand" and "play_tile" to "player.py".
+- Added method to show the letters in "tiles.py".
+## Status
+- Development
 ## (0.2.4) 03-10-23
 ### Added 
 - Added test for reset_game in test_scrabble_game.
