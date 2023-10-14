@@ -1,6 +1,13 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.2.8) 14-10-23
+### Added 
+- Add test for method player count.
+### Changed
+- Change on code in scrabbleCli.
+## Status
+- Development
 ## (0.2.7) 11-10-23
 - Added main.py and scrabbleCli.py 
 ## Status
