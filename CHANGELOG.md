@@ -1,6 +1,13 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.2.9) 14-10-23
+### Changed
+- Change Cognitive Complexity on "get_player_count". 
+### Unreleased
+- Improve test on "test_scarbbleCli.py"
+## Status
+- Development
 ## (0.2.8) 14-10-23
 ### Added 
 - Add test for method player count.
