@@ -1,6 +1,5 @@
 import unittest
-from game.board import Board
-from game.board import Cell
+from game.board import *
 from game.tiles import Tile
 
 

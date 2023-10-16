@@ -1,6 +1,6 @@
 import unittest
 
-from game.tiles import BagTiles,Tile, Comodin
+from game.tiles import *
 from piezas import DATA
 from unittest.mock import patch
 
