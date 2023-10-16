@@ -28,5 +28,13 @@ class TestPlayer(unittest.TestCase):
         player = Player(bag)
         player.draw_tiles(bag, 7) 
         player.display_hand()
+
+    def SumScore(self):
+        player = Player()
+        self.assertEqual(player.score, 0)
+        player.sumScore(15)
+        self.assertEqual(player.score, 15)
+        player.sumScore(32)
+        self.assertEqual(player.score, 47)
 if __name__ == '__main__':
     unittest.main()

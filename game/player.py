@@ -1,8 +1,9 @@
-from game.tiles import Tile
+
 class Player:
     def __init__(self,bag_tiles = None):
         self.bag_tiles = bag_tiles
         self.tiles = []
+        self.score = 0
     
     def draw_tiles(self,bag,count):
         drawn_tiles = bag.take(count)
@@ -19,3 +20,6 @@ class Player:
     
     def display_hand(self):
         print("Player's hand: ", self.tiles.__str__())
+
+    def scoresum (self, score:int ):
+        self.score += score
