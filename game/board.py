@@ -5,29 +5,22 @@ DOUBLE_WORD_SCORE = ((1,1), (2,2), (3,3), (4,4), (1, 13), (2, 12), (3, 11), (4, 
 TRIPLE_LETTER_SCORE = ((1,5), (1, 9), (5,1), (5,5), (5,9), (5,13), (9,1), (9,5), (9,9), (9,13), (13, 5), (13,9))
 DOUBLE_LETTER_SCORE = ((0, 3), (0,11), (2,6), (2,8), (3,0), (3,7), (3,14), (6,2), (6,6), (6,8), (6,12), (7,3), (7,11),
                         (8,2), (8,6), (8,8), (8, 12), (11,0), (11,7), (11,14), (12,6), (12,8), (14, 3), (14, 11))
-class Cell:
-    def __init__(self, letter=None, multiplier=1, multiplier_type=''):
-        self.multiplier = multiplier
-        self.multiplier_type = multiplier_type
-        self.letter = letter
-
-    def add_letter(self, letter:Tile):
-        self.letter = letter
-
-    def calculate_value(self):
-        if self.letter is None:
-            return 0
-        if self.multiplier_type == 'letter':
-            return self.letter.value * self.multiplier
-        else:
-            return self.letter.value
-
 class Board:
     def __init__(self):
         self.grid = [
             [ Cell(1, '') for _ in range(15) ]
             for _ in range(15)
         ]
+
+    def show_board(self):
+        print('\n  |' + ''.join([f' {str(row_index).rjust(2)} ' for row_index in range(15)]))
+        for row_index, row in enumerate(self.grid):
+            print(
+                str(row_index).rjust(2) +
+                '| ' +
+                ' '.join([repr(cell) for cell in row])
+            )
+
     def cells_multiplier(self):
         for coordinate in TRIPLE_WORD_SCORE:
             self.cell_multiplier(coordinate, "word", 3)
@@ -64,4 +57,28 @@ class Board:
             return False
         else:
             return True
+class Cell:
+    def __init__(self, letter=None, multiplier=1, multiplier_type='',multiplier_active=True):
+        self.multiplier = multiplier
+        self.multiplier_type = multiplier_type
+        self.letter = letter
+        self.multiplier_active = multiplier_active
 
+    def add_letter(self, letter:Tile):
+        self.letter = letter
+
+    def calculate_value(self):
+        if self.letter is None:
+            return 0
+        if self.multiplier_type == 'letter':
+            return self.letter.value * self.multiplier
+        else:
+            return self.letter.value
+        
+    def __repr__(self):
+        if self.letter:
+            return repr(self.letter)
+        if self.multiplier > 1:
+            return f'{"W" if self.multiplier_type == "word" else "L"}x{self.multiplier}'
+        else:
+            return '   '

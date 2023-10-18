@@ -1,6 +1,5 @@
 import unittest
 from game.board import *
-  
 class TestBoard(unittest.TestCase):
     def test_init(self):
         board = Board()
@@ -12,6 +11,31 @@ class TestBoard(unittest.TestCase):
             len(board.grid[0]),
             15,
         )  
+    def test_place_word_cross_vertical_fine(self):
+        fill_with = (
+            '               ' # 0
+            '               ' # 1
+            '               ' # 2
+            '               ' # 3
+            '               ' # 4
+            '               ' # 5
+            '               ' # 6
+            '       CASA    ' # 7
+            '        S      ' # 8
+            '        A      ' # 9
+            '        D      ' # 0
+            '        O      ' # 1
+            '               ' # 2
+            '               ' # 3
+            '               ' # 4
+        )   #012345678901234
+        board = Board()
+        # show_board(board)
+        word = "FACULTAD"
+        location = (6, 11)
+        orientation = "vertical"
+        word_is_valid = board.validate_word(word, location, orientation)
+        assert word_is_valid == True
     def test_cells_multiplier(self):
         grid = Board()
         grid.cells_multiplier()

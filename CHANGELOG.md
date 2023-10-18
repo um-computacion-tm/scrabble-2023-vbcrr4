@@ -1,6 +1,12 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.1) 18-10-23
+### Added
+- New method (show_board) in "board.py".
+- Test for "show_board".
+## Status
+- Development
 ## (0.3.0) 16-10-23
 ### Added
 - New method on "player.py".
