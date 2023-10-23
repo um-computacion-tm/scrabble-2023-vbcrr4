@@ -7,6 +7,7 @@ DOUBLE_LETTER_SCORE = ((0, 3), (0,11), (2,6), (2,8), (3,0), (3,7), (3,14), (6,2)
                         (8,2), (8,6), (8,8), (8, 12), (11,0), (11,7), (11,14), (12,6), (12,8), (14, 3), (14, 11))
 class Board:
     def __init__(self):
+        #self.grid = [[Cell(1, '', row=row, col=col) for col in range(15)] for row in range(15)] 
         self.grid = [
             [ Cell(1, '') for _ in range(15) ]
             for _ in range(15)
@@ -20,7 +21,6 @@ class Board:
                 '| ' +
                 ' '.join([repr(cell) for cell in row])
             )
-
     def cells_multiplier(self):
         for coordinate in TRIPLE_WORD_SCORE:
             self.cell_multiplier(coordinate, "word", 3)
@@ -50,6 +50,18 @@ class Board:
         word_value *= word_multiplier
         return word_value
     
+    def put_words(self, word_list_of_tiles, location, orientation):
+    self.validate_word(word_list_of_tiles, location, orientation)
+    len_word = len(word_list_of_tiles)
+    row, col = location
+    row_increment, col_increment = (0, 1) if orientation == 'H' else (1, 0)
+    # Place the tiles on the board
+    for i in range(len_word):
+        if self.grid[row][col].letter is None:  # checks if cell at current position is empty
+            self.grid[row][col].letter = word_list_of_tiles[i]  # If it's empty, it puts a letter
+        row += row_increment
+        col += col_increment
+
     def validate_word (self, word, location, orientation):
         len_word = len(word)
 

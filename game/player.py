@@ -23,3 +23,4 @@ class Player:
 
     def scoresum (self, score:int ):
         self.score += score
+        #agregar suma del valor de palabras

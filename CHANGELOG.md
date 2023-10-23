@@ -1,6 +1,11 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.2) 23-10-23
+### Unreleased
+- Added new method and tests, but have to correct it
+## Status
+- Development
 ## (0.3.1) 18-10-23
 ### Added
 - New method (show_board) in "board.py".

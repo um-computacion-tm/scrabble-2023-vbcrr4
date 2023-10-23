@@ -108,6 +108,52 @@ class TestBoard(unittest.TestCase):
 
         word_is_valid = board.validate_word(word, location, orientation)
         assert word_is_valid == False    
+        
+    def test_put_words_horizontal(self):
+        board = Board()
+        tile1 = Tile('H',4)
+        tile2 = Tile('O',1)
+        tile3 = Tile('Y',4)
+        word = [tile1, tile2, tile3]
+        board.put_words(word, (4,4),'H')
+        self.assertEqual(board.grid[4][4].tile, tile1) #para que 'H' sea igual a 'H'
+        self.assertEqual(board.grid[4][5].tile, tile2)
+        self.assertEqual(board.grid[4][6].tile, tile3)
+
+    def test_put_words_horizontal_exception(self):
+        board = Board()
+        tile1 = Tile('H',4)
+        tile2 = Tile('O',1)
+        tile3 = Tile('Y',4)
+        word = [tile1, tile2, tile3]
+    # Puts the word
+        board.put_words(word, (4,4),'H')
+    # Try to put a letter
+        self.assertFalse(board.put_words('A', (4,4),'H')) #no la pone
+
+    def test_put_words_vertical(self):
+        board = Board()
+        tile1 = Tile('H',4)
+        tile2 = Tile('O',1)
+        tile3 = Tile('Y',4)
+        word = [tile1, tile2, tile3]
+        board.put_words(word, [4,4],'V')
+        self.assertEqual(board.grid[4][4].tile, tile1) #para que 'H' sea igual a 'H'
+        self.assertEqual(board.grid[5][4].tile, tile2)
+        self.assertEqual(board.grid[6][4].tile, tile3)
+
+    def test_put_words_vertical_exception(self):
+        board = Board()
+        tile1 = Tile('H',4)
+        tile2 = Tile('O',1)
+        tile3 = Tile('Y',4)
+        word = [tile1, tile2, tile3]
+    # Puts the word
+        board.put_words(word, [4,4],'H')
+    # Try to put a letter
+        self.assertFalse(board.put_words('A', (4,4),'H'))
+
+ 
 
 class TestCell(unittest.TestCase):
     def test_init(self):
