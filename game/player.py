@@ -1,10 +1,15 @@
 
 class Player:
-    def __init__(self,bag_tiles = None):
+    def __init__(self,bag_tiles = None, nameplayer = None, id: int):
         self.bag_tiles = bag_tiles
         self.tiles = []
         self.score = 0
-    
+        self.nameplayer = nameplayer
+        self.id = id
+
+    #def name_player(self):
+    #    return self.nameplayer
+
     def draw_tiles(self,bag,count):
         drawn_tiles = bag.take(count)
         self.tiles.extend(drawn_tiles)

@@ -1,8 +1,9 @@
 from game.scrabble_game import ScrabbleGame
-
+from game.player import *
 class ScrabbleCli:
     def __init__(self): 
         self.game = ScrabbleGame(players_count=0)
+        self.game_status = True
 
     def get_player_count(self):
         while True:
@@ -24,3 +25,30 @@ class ScrabbleCli:
                 return None
         except ValueError:
             return None
+        
+    def create_players(self, player_count):
+        players = []
+        for i in range(player_count):
+            player_name = input(f'Nombre del Jugador {i + 1}: ')
+            player = Player(nameplayer=player_name)
+            players.append(player)
+        return players
+    
+    """def menu (self):
+        self.game.next_turn()
+        self.game.board.show_board()
+        self.game.comodin()
+        self.game.players()
+        self.game.scoresum()
+        print(f"puntaje de jugador: {self.game.scoresum}")
+
+    def main (self):
+        while self.game_status is True:
+            self.menu()
+            menu = int(input("eliga algo del menu"))
+            #if menu == 1:"""
+
+
+if __name__ == "__main__":
+    main = ScrabbleCli()
+    main.main()

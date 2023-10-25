@@ -1,6 +1,11 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.4) 25-10-23
+### Unreleased
+- New method to custom player and add username to player.
+## Status
+- Development
 ## (0.3.3) 24-10-23
 ### Fixed
 - Fixed method "put_words" in "board.py". 
