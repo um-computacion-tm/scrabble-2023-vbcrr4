@@ -1,14 +1,19 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.3) 24-10-23
+### Fixed
+- Fixed method "put_words" in "board.py". 
+## Status
+- Development
 ## (0.3.2) 23-10-23
 ### Unreleased
-- Added new method and tests, but have to correct it
+- Added new method and tests, but have to correct it in "board.py".
 ## Status
 - Development
 ## (0.3.1) 18-10-23
 ### Added
-- New method (show_board) in "board.py".
+- New method "show_board" in "board.py".
 - Test for "show_board".
 ## Status
 - Development

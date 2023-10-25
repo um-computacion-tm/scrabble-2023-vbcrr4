@@ -51,16 +51,16 @@ class Board:
         return word_value
     
     def put_words(self, word_list_of_tiles, location, orientation):
-    self.validate_word(word_list_of_tiles, location, orientation)
-    len_word = len(word_list_of_tiles)
-    row, col = location
-    row_increment, col_increment = (0, 1) if orientation == 'H' else (1, 0)
+        self.validate_word(word_list_of_tiles, location, orientation)
+        len_word = len(word_list_of_tiles)
+        row, col = location
+        row_increment, col_increment = (0, 1) if orientation == 'H' else (1, 0)
     # Place the tiles on the board
-    for i in range(len_word):
-        if self.grid[row][col].letter is None:  # checks if cell at current position is empty
-            self.grid[row][col].letter = word_list_of_tiles[i]  # If it's empty, it puts a letter
-        row += row_increment
-        col += col_increment
+        for i in range(len_word):
+            if self.grid[row][col].tile is None: 
+                self.grid[row][col].tile = word_list_of_tiles[i] 
+            row += row_increment
+            col += col_increment
 
     def validate_word (self, word, location, orientation):
         len_word = len(word)
@@ -70,11 +70,12 @@ class Board:
         else:
             return True
 class Cell:
-    def __init__(self, letter=None, multiplier=1, multiplier_type='',multiplier_active=True):
+    def __init__(self, letter=None, multiplier=1, multiplier_type='',multiplier_active=True, tile: Tile = None):
         self.multiplier = multiplier
         self.multiplier_type = multiplier_type
         self.letter = letter
         self.multiplier_active = multiplier_active
+        self.tile = tile
 
     def add_letter(self, letter:Tile):
         self.letter = letter

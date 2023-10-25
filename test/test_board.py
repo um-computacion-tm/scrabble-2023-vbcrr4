@@ -126,7 +126,7 @@ class TestBoard(unittest.TestCase):
         tile2 = Tile('O',1)
         tile3 = Tile('Y',4)
         word = [tile1, tile2, tile3]
-    # Puts the word
+    # Put the word
         board.put_words(word, (4,4),'H')
     # Try to put a letter
         self.assertFalse(board.put_words('A', (4,4),'H')) #no la pone
@@ -148,7 +148,7 @@ class TestBoard(unittest.TestCase):
         tile2 = Tile('O',1)
         tile3 = Tile('Y',4)
         word = [tile1, tile2, tile3]
-    # Puts the word
+    # Put the word
         board.put_words(word, [4,4],'H')
     # Try to put a letter
         self.assertFalse(board.put_words('A', (4,4),'H'))
