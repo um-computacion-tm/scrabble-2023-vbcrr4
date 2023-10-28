@@ -1,6 +1,11 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.5) 28-10-23
+### Added 
+- New class "Rack" in player.py, to manipulate the player's rack
+## Status
+- Development
 ## (0.3.4) 25-10-23
 ### Unreleased
 - New method to custom player and add username to player.
