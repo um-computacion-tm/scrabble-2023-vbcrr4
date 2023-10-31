@@ -11,6 +11,9 @@ class Tile:
 
     def __repr__(self) -> str:
         return str("[" + self.letter + "](" + str(self.value) + "p.)")
+    
+    def __repr__(self):
+        return f"{self.letter}:{self.value}"
 
 class Comodin:
     def __init__(self):

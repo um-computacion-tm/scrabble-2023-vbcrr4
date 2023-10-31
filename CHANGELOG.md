@@ -1,6 +1,63 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.6) 30-10-23
+### Added  
+- Added new method and test for "place_word" in "board.py".
+### Changed
+- Changes in the "board.py" code and test.
+- Change of Rack class from "player.py" to "board.py". 
+## Status
+- Development
+## (0.3.5) 28-10-23
+### Added 
+- New class "Rack" in player.py, to manipulate the player's rack
+## Status
+- Development
+## (0.3.4) 25-10-23
+### Unreleased
+- New method to custom player and add username to player.
+## Status
+- Development
+## (0.3.3) 24-10-23
+### Fixed
+- Fixed method "put_words" in "board.py". 
+## Status
+- Development
+## (0.3.2) 23-10-23
+### Unreleased
+- Added new method and tests, but have to correct it in "board.py".
+## Status
+- Development
+## (0.3.1) 18-10-23
+### Added
+- New method "show_board" in "board.py".
+- Test for "show_board".
+## Status
+- Development
+## (0.3.0) 16-10-23
+### Added
+- New method on "player.py".
+## Status
+- Development
+## (0.2.9) 14-10-23
+### Changed
+- Change Cognitive Complexity on "get_player_count". 
+### Unreleased
+- Improve test on "test_scarbbleCli.py"
+## Status
+- Development
+## (0.2.8) 14-10-23
+### Added 
+- Add test for method player count.
+### Changed
+- Change on code in scrabbleCli.
+## Status
+- Development
+## (0.2.7) 11-10-23
+- Added main.py and scrabbleCli.py 
+## Status
+- Development
 ## (0.2.6) 06-10-23
 ### Change
 - Added letter and points in repr (tiles.py).
