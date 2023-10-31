@@ -1,6 +1,14 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.6) 30-10-23
+### Added  
+- Added new method and test for "place_word" in "board.py".
+### Changed
+- Changes in the "board.py" code and test.
+- Change of Rack class from "player.py" to "board.py". 
+## Status
+- Development
 ## (0.3.5) 28-10-23
 ### Added 
 - New class "Rack" in player.py, to manipulate the player's rack
