@@ -1,6 +1,17 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.7) 07-11-23
+### Changed
+- Modifications and new methods added in "board.py".
+- Changes in the code of "tiles.py".
+- Changes in the "Cell" class.
+### Added
+- Added test in "tiles.py" for "Comodin" class.
+- Added new methods in "board.py".
+- Added test to validate new methods in "test_board.py".
+## Status
+- Development
 ## (0.3.6) 30-10-23
 ### Added  
 - Added new method and test for "place_word" in "board.py".
