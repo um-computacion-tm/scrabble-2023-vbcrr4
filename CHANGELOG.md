@@ -1,6 +1,11 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.8) 07-11-23
+### Changed
+- Removed "test_calculate_word_value.py", because the method "calculate_word_value" is being tested in "test_board.py".
+## Status
+- Development
 ## (0.3.7) 07-11-23
 ### Changed
 - Modifications and new methods added in "board.py".
