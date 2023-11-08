@@ -1,6 +1,12 @@
 # CHANGELOG
 ## Status
 - Development
+## (0.3.9) 07-11-23
+### Added
+- Added new methods in "player.py
+- Added test to validate new methods in "test_player.py"
+## Status
+- Development
 ## (0.3.8) 07-11-23
 ### Changed
 - Removed "test_calculate_word_value.py", because the method "calculate_word_value" is being tested in "test_board.py".
